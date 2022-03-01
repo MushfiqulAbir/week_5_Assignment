@@ -1,0 +1,18 @@
+This text file includes all three queries used to gater the correct data asked in the questions from the csv file
+
+
+#Q1
+
+select name, lat from airports
+where lat = (select max(lat) from airports);
+
+
+#Q2
+
+select name, lat from airports
+where lat = (select min(lat) from airports);
+
+
+#Q3
+select * from weather 
+where wind_speed = (select max(wind_speed) from weather) && day =  12 && year = 2013
